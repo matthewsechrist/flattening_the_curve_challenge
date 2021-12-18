@@ -11,8 +11,8 @@ def send_sqs_message(QueueName, msg_body, delay):
     
     try:
         msg = sqs_client.send_message(QueueUrl     = sqs_queue_url,
-                                      MessageBody  = json.dumps(msg_body),DelaySeconds=delay)
-                                      #MessageBody = json.dumps(msg_body))
+                                      #MessageBody  = json.dumps(msg_body),DelaySeconds=delay)
+                                      MessageBody = json.dumps(msg_body))
 
     except ClientError as e:
         logging.error(e)
